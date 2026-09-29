@@ -30,8 +30,8 @@ a:hover { border-bottom-color: var(--amber); }
 /* top bar */
 .bar { position: absolute; inset: 0 0 auto 0; z-index: 3; padding: 22px 0; }
 .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.mark { white-space: nowrap; font-family: var(--serif); letter-spacing: 0.32em; text-transform: uppercase; font-size: 0.8rem; color: var(--text); border: 0; }
-.mark span { color: var(--amber); }
+.mark { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; font-family: var(--serif); letter-spacing: 0.32em; text-transform: uppercase; font-size: 0.8rem; color: var(--text); border: 0; }
+.mark .word { color: var(--text); }
 .nav a { border: 0; color: var(--muted); font-size: 0.85rem; margin-left: 18px; }
 .nav a:hover { color: var(--text); }
 
@@ -102,4 +102,21 @@ footer a:hover { color: var(--text); }
   .hero h1, .hero .lead, .eyebrow { animation: rise 1.1s ease-out both; }
   .hero .lead { animation-delay: 0.15s; }
   @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+}
+
+/* logo */
+.mark img { width: 40px; height: 40px; border-radius: 50%; filter: drop-shadow(0 0 10px rgba(139, 110, 255, 0.35)); }
+.mark .word > span { color: var(--amber); }
+.emblem { display: block; width: 112px; height: 112px; border-radius: 50%; margin: 0 0 22px; filter: drop-shadow(0 0 24px rgba(139, 110, 255, 0.35)); }
+.foot-brand { display: flex; align-items: center; gap: 14px; }
+.foot-brand img { width: 56px; height: 56px; border-radius: 50%; opacity: 0.9; }
+@media (max-width: 760px) {
+  .mark img { width: 32px; height: 32px; }
+  .mark { gap: 9px; }
+}
+@media (max-width: 359px) {
+  .mark .word { display: none; }
+}
+@media (max-width: 480px) {
+  .nav a:not(:last-child) { display: none; }
 }
